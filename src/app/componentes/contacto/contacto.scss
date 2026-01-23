@@ -1,0 +1,75 @@
+.raya-decorativa {
+    width: 60px;
+    height: 4px;
+    background-color: var(--bs-info);
+    border-radius: 2px;
+}
+
+/* Estilo para los iconos circulares de contacto */
+.icono-contacto {
+    width: 50px;
+    height: 50px;
+    background-color: var(--bs-info); /* Tu celeste */
+    flex-shrink: 0; /* Para que no se aplaste si falta espacio */
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(56, 189, 248, 0.3);
+}
+
+/* Efecto hover en los ítems de contacto */
+.tarjeta-contacto:hover .icono-contacto {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Ajuste para el modo oscuro */
+body.dark-mode {
+    .btn-outline-light.text-primary {
+        /* Hacemos que los botones pequeños sean visibles en dark mode */
+        color: #38bdf8 !important; 
+        &:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+        }
+    }
+}
+
+/* 
+    ESTILO DEL FORMULARIO
+*/
+
+.form-control {
+    background-color: var(--bg-par);
+    border: 1px solid var(--card-border);
+    color: var(--text-main);
+    transition: all 0.3s ease;
+
+    &:focus {
+        background-color: var(--bg-par);
+        color: var(--text-main);
+        border-color: #38bdf8;
+        box-shadow: 0 0 0 0.25rem rgba(56, 189, 248, 0.25);
+    }
+
+    &::placeholder {
+        color: var(--text-muted);
+        opacity: 0.6;
+    }
+}
+
+/* 
+    Ajuste específico para el modo oscuro 
+*/
+body.dark-mode {
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.03);
+        border-color: rgba(255, 255, 255, 0.1);
+        
+        &:focus {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: #38bdf8;
+        }
+    }
+}
+
+
+.tarjeta-contacto {
+    background-color: var(--card-bg);
+}

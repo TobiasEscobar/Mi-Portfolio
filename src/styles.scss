@@ -1,1 +1,243 @@
-/* You can add global styles to this file, and also import other style files */
+$primary: #1e293b;
+$info: #38bdf8;
+$light: #f8fafc;
+$dark: #020617;
+
+$enable-shadows: true;
+$enable-gradients: false;
+
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import "bootstrap/scss/bootstrap";
+
+
+/* 
+    VARIABLES CSS — TEMA CLARO (DEFAULT) 
+*/
+
+:root {
+    /* Fondos */
+    --bg-par: #ffffff;
+    --bg-impar: #f8fafc;
+    --bg-icono: #1e293b;
+
+    /* Texto */
+    --text-main: #1e293b;
+    --text-muted: #000000;
+
+    /* Componentes */
+    --card-bg: #ffffff;
+    --card-border: rgba(0,0,0,0.08);
+    --navbar-bg: #ffffff;
+    // 1e293b
+
+    /* Layout */
+    --nav-height: 10%;
+}
+
+/* 
+    ESTILOS GLOBALES 
+*/
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height);
+}
+
+body {
+    background-color: var(--bg-par);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.texto-acento {
+    color: $info;
+}
+
+
+/* Navbar */
+.navbar {
+    background-color: var(--navbar-bg) !important;
+    transition: background-color 0.3s ease;
+}
+/* FORZAR COLORES DEL NAVBAR */
+.navbar {
+    background-color: var(--navbar-bg) !important;
+    transition: background-color 0.3s ease;
+
+    .nav-link, 
+    .navbar-brand {
+        color: var(--text-main) !important;
+        transition: color 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .navbar-brand:hover {
+        color: #38bdf8 !important;
+    }
+}
+
+
+/* Texto muted dinámico */
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* Tarjetas */
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+    color: var(--text-main);
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Efecto vidrio en el fondo del modal */
+.modal-backdrop.show {
+    opacity: 0.8;
+    backdrop-filter: blur(5px); /* Desenfoca lo que está atrás */
+}
+
+/*
+    SECCIONES (BASE)
+*/
+
+section {
+    min-height: calc(100vh - var(--nav-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 0;
+    transition: background-color 0.3s ease;
+}
+
+
+/*
+    MODO CLARO — ALTERNANCIA AUTOMÁTICA
+*/
+
+body:not(.dark-mode) section:nth-of-type(odd) {
+    background-color: var(--bg-impar);
+}
+
+body:not(.dark-mode) section:nth-of-type(even) {
+    background-color: var(--bg-par);
+}
+
+
+/*
+    MODO OSCURO — VARIABLES PROFESIONALES
+*/
+
+body.dark-mode {
+    /* Fondos */
+    --bg-par: #0f172a;
+    --bg-impar: #050e36;
+    --bg-icono: #050e36;
+
+    /* Texto */
+    --text-main: #e5e7eb;
+    --text-muted: #ffffff;
+
+    /* Componentes */
+    --card-bg: #1e293b;
+    --card-border: rgba(255,255,255,0.08);
+    --navbar-bg: #0f172a;
+
+    /* Botones Outline (Bordes) */
+    .btn-outline-primary {
+        color: #38bdf8;
+        border-color: #38bdf8;
+        &:hover {
+            background-color: #38bdf8;
+            color: #0f172a;
+            border-color: #38bdf8;
+        }
+    }
+
+    /* Botones Light */
+    .btn-light {
+        background-color: rgba(255,255,255,0.9);
+        border: none;
+        color: #1e293b;
+        
+        &:hover {
+            background-color: #ffffff;
+            color: #0ea5e9;
+        }
+    }
+
+    /* Modal (Para que el título se lea bien) */
+    .modal-content {
+        background-color: var(--card-bg);
+        color: var(--text-main);
+    }
+
+    .modal-header {
+        border-bottom: 1px solid var(--card-border);
+    }
+    
+    .btn-close {
+        filter: invert(1) grayscale(100%) brightness(200%);
+    }
+}
+
+
+/*
+    MODO OSCURO — ALTERNANCIA DE SECCIONES
+*/
+
+
+body.dark-mode section:nth-of-type(odd) {
+    background-color: var(--bg-par);
+}
+
+body.dark-mode section:nth-of-type(even) {
+    background-color: var(--bg-impar);
+}
+
+
+/*
+    COLOR ACENTO (LINKS / ÉNFASIS)
+*/
+
+
+a, .texto-acento {
+    color: #38bdf8;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #0ea5e9;
+}
+
+
+/*
+    HOVER TARJETAS — LIMPIO Y PROFESIONAL
+*/
+
+
+body.dark-mode .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+
+/*
+    TARJETAS AJUSTES ESPECÍFICO
+*/
+
+
+.tarjeta-estudio:hover {
+    background-color: #f1f5f9 !important;
+}
+
+body.dark-mode .tarjeta-estudio:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(56, 189, 248, 0.4) !important;
+}
+
+

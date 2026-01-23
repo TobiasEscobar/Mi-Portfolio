@@ -1,0 +1,32 @@
+<header class="d-flex align-items-center bg-primario text-white">
+    <div class="container text-center text-md-start">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="display-1 texto-acento fw-bold">Hola! Soy Tobías Fabricio Escobar</h1>
+                <h6 class="display-6 text-muted fw-bold">Desarrollador Web Full Stack</h6>
+            </div>
+            <div class="col-md-5 text-center mt-4 mt-md-0">
+                <img src="foto-perfil.jpeg" 
+                    alt="Foto de perfil" 
+                    class="img-fluid rounded-circle shadow-lg border border-4 border-secondary"
+                    style="max-width: 350px; width: 100%; aspect-ratio: 1/1; object-fit: cover;">
+            </div>
+            <p class="lead mb-4 text-muted parrafo-sobre-mi">
+                Soy un desarrollador Web Full Stack con varios proyectos realizados tanto de manera académica, personal y grupal en los que desarrollé tanto el frontend, backend y
+                las conexiones a bases de datos.<br>
+                Estoy en busqueda de mi primera experiencia profesional para aplicar mis conocimientos, enfrentarme a nuevos retos técnicos y poder desenvolverme dentro de un equipo profesional.
+            </p>
+            <div class="container-botones">
+                <a href="CV Tobias Fabricio Escobar 2026.pdf" 
+                    download="CV Tobias Fabricio Escobar 2026.pdf" 
+                    class="btn btn-outline-primary btn-lg w-md-auto rounded-pill shadow-sm"
+                    target="_blank">
+                    Descargar CV <i class="bi bi-download ms-2"></i>
+                </a>
+                <button class="btn btn-outline-primary btn-lg w-md-auto rounded-pill shadow-sm"><a class="nav-link" (click)="irASeccion('proyectos')">Ver Proyectos</a></button>
+                <button class="btn btn-outline-primary btn-lg w-md-auto rounded-pill shadow-sm"><a class="nav-link" (click)="irASeccion('estudios')">Mis Estudios</a></button>
+            </div>
+            
+        </div>
+    </div>
+</header>

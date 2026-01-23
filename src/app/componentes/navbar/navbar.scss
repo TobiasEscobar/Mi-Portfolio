@@ -1,0 +1,17 @@
+.nav-link {
+    cursor: pointer;
+    transition: color 0.3s ease;
+    
+    /* Aseguramos que el hover use tu color acento */
+    &:hover {
+        color: var(--bs-info) !important;
+    }
+}
+
+.navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    
+    /* CAMBIO: Usar variable para que se vea sutil en ambos modos */
+    border-bottom: 1px solid var(--card-border); 
+}

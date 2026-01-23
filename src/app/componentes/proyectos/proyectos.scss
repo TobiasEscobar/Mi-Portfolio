@@ -1,0 +1,117 @@
+/* Línea decorativa debajo del título */
+.raya-decorativa {
+  width: 60px;
+  height: 4px;
+  background-color: var(--bs-info); /* color celeste */
+  border-radius: 2px;
+}
+
+.tarjeta-proyecto {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  /* Al pasar el mouse por la tarjeta completa */
+  &:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    
+    /* Efecto en la imagen */
+    .card-img-top {
+      transform: scale(1.05); /* Zoom sutil */
+    }
+    
+    /* Mostrar overlay */
+    .overlay-hover {
+      opacity: 1;
+    }
+  }
+}
+
+.card-img-top {
+  transition: transform 0.5s ease;
+}
+
+.btn-outline-primary {
+  width: 40%;
+  margin-right: 5%;
+  margin-left: 5%;
+  
+}
+
+/* Estilo de las etiquetas/insignias */
+.badge-tecnologia {
+    background-color: var(--bs-light);
+    color: var(--bs-dark);
+    border: 1px solid rgba(0,0,0,0.1);
+    margin: 2px 5px 5px 2px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: var(--bs-info);
+        color: white;
+        border-color: var(--bs-info);
+    }
+  }
+
+/* Capa oscura que aparece sobre la imagen */
+.overlay-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 41, 59, 0.6); /* color primario con transparencia */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* ESTILOS DEL MODAL DE GALERÍA */
+
+.contenedor-galeria {
+  height: 70vh;
+  background-color: #0f0f10;
+  width: 100%;
+  position: relative;
+  
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain; /* La imagen se ajusta sin recortarse ni estirarse */
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Sombra suave tras la imagen */
+  }
+}
+
+/* Personalización de las flechas/Controles */
+.carousel-control-prev, 
+.carousel-control-next {
+  width: 5%; /* Zona de click más angosta para no tapar la foto */
+  opacity: 1; /* Siempre visibles */
+  
+  &:hover .icono-control {
+    background-color: var(--bs-info);
+    color: white;
+    transform: scale(1.1);
+  }
+}
+
+.icono-control {
+  background-color: rgba(30, 41, 59, 0.5); /* Fondo semitransparente */
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px); /* Efecto vidrio */
+}
+
+/* Ajuste para celulares */
+@media (max-width: 768px) {
+  .contenedor-galeria {
+    height: 50vh;
+  }
+}

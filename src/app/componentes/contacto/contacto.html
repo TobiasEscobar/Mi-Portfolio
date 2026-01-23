@@ -1,0 +1,195 @@
+<!-- <div class="container py-5">
+    
+    <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold text-muted">Contacto</h2>
+        <h6 class="texto-acento text-uppercase fw-bold letter-spacing">¿Tiene alguna duda? ¡Envíe un mensaje!</h6>
+        <div class="raya-decorativa mx-auto mt-3"></div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            
+            <div class="card shadow-sm border-0 tarjeta-contacto">
+                <div class="card-body p-4 p-md-5">
+
+                    <form [formGroup]="contactoForm" (ngSubmit)="enviarMensaje()">
+                        <div class="row g-3">
+                            
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold small text-muted">NOMBRE</label>
+                                <input type="text" 
+                                    class="form-control form-control-lg" 
+                                    placeholder="Su nombre" 
+                                    formControlName="nombre">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold small text-muted">CORREO</label>
+                                <input type="email" 
+                                    class="form-control form-control-lg" 
+                                    placeholder="sucorreo@ejemplo.com" 
+                                    formControlName="email">
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <label class="form-label fw-bold small text-muted">MENSAJE</label>
+                                <textarea class="form-control form-control-lg" 
+                                        rows="5" 
+                                        placeholder="Escriba su mensaje aquí..." 
+                                        formControlName="mensaje"></textarea>
+                            </div>
+
+                            <div class="col-12 text-center mt-5">
+                                <button type="submit" 
+                                        class="btn btn-outline-primary btn-lg px-5 py-3 w-100 w-md-auto rounded-pill shadow-sm"
+                                        [disabled]="enviando"> @if (!enviando) {
+                                        Enviar Mensaje <i class="bi bi-send-fill ms-2"></i>
+                                    } @else {
+                                        <span>Enviando...</span>
+                                        <div class="spinner-border spinner-border-sm ms-2" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    }
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> -->
+
+
+<div class="container py-5">
+    
+    <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold text-muted">Contacto</h2>
+        <h6 class="texto-acento text-uppercase fw-bold letter-spacing">¡Conectemos!</h6>
+        <div class="raya-decorativa mx-auto mt-3"></div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+        
+        <div class="col-lg-5">
+            <div class="card h-100 border-0 shadow-sm tarjeta-contacto d-flex flex-column justify-content-center p-4">
+                
+                <h4 class="fw-bold mb-4">Información</h4>
+                
+                <div class="d-flex align-items-center mb-4">
+                    <div class="icono-contacto rounded-circle d-flex align-items-center justify-content-center me-3">
+                        <i class="bi bi-geo-alt-fill text-white fs-5"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-0 text-muted small">UBICACIÓN</h6>
+                        <p class="mb-0 fw-semibold">Buenos Aires, Argentina</p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mb-4">
+                    <div class="icono-contacto rounded-circle d-flex align-items-center justify-content-center me-3">
+                        <i class="bi bi-envelope-fill text-white fs-5"></i>
+                    </div>
+                    <div class="w-100">
+                        <h6 class="fw-bold mb-0 text-muted small">CORREO ELECTRÓNICO</h6>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="mb-0 fw-semibold">tobias...@gmail.com</span>
+                            <button class="btn btn-sm btn-outline-primary border-0" (click)="copiarEmail()" title="Copiar Correo">
+                                <i class="bi bi-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mb-4">
+                    <div class="icono-contacto rounded-circle d-flex align-items-center justify-content-center me-3">
+                        <i class="bi bi-whatsapp text-white fs-5"></i>
+                    </div>
+                    <div class="w-100">
+                        <h6 class="fw-bold mb-0 text-muted small">TELÉFONO</h6>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="mb-0 fw-semibold">Contactar por WhatsApp</span>
+                            <button class="btn btn-sm btn-outline-primary border-0" (click)="abrirWhatsapp()" title="Enviar mensaje">
+                                <i class="bi bi-box-arrow-up-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <div class="icono-contacto rounded-circle d-flex align-items-center justify-content-center me-3">
+                        <i class="bi bi-linkedin text-white fs-5"></i>
+                    </div>
+                    <div class="w-100">
+                        <h6 class="fw-bold mb-0 text-muted small">RED PROFESIONAL</h6>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="mb-0 fw-semibold">Perfil de LinkedIn</span>
+                            <button class="btn btn-sm btn-outline-primary border-0" (click)="abrirLinkedin()">
+                                <i class="bi bi-box-arrow-up-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-7">
+            <div class="card shadow-sm border-0 tarjeta-contacto h-100">
+                <div class="card-body p-4 p-md-5">
+                    
+                    <p class="text-muted mb-4">
+                        O si prefiere, puede completar el formulario y le responderé a la brevedad.
+                    </p>
+
+                    <form [formGroup]="contactoForm" (ngSubmit)="enviarMensaje()">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold small text-muted">NOMBRE</label>
+                                <input type="text" 
+                                    class="form-control form-control-lg" 
+                                    placeholder="Su nombre" 
+                                    formControlName="nombre">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold small text-muted">CORREO</label>
+                                <input type="email" 
+                                    class="form-control form-control-lg" 
+                                    placeholder="sucorreo@ejemplo.com" 
+                                    formControlName="email">
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <label class="form-label fw-bold small text-muted">MENSAJE</label>
+                                <textarea class="form-control form-control-lg" 
+                                        rows="5" 
+                                        placeholder="Escriba su mensaje aquí..." 
+                                        formControlName="mensaje"></textarea>
+                            </div>
+
+                            <div class="col-12 text-center mt-5">
+                                <button type="submit" 
+                                        class="btn btn-outline-primary btn-lg px-5 py-3 w-100 w-md-auto rounded-pill shadow-sm"
+                                        [disabled]="enviando"> @if (!enviando) {
+                                        Enviar Mensaje <i class="bi bi-send-fill ms-2"></i>
+                                    } @else {
+                                        <span>Enviando...</span>
+                                        <div class="spinner-border spinner-border-sm ms-2" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    }
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
