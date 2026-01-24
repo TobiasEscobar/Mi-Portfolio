@@ -6,20 +6,18 @@ const dir = './src/environments';
 const targetFile = './src/environments/environment.ts';
 const targetFileProd = './src/environments/environment.prod.ts';
 
-// Crear el contenido leyendo las variables DE VERCEL (no las tuyas)
+// Crear el contenido leyendo las variables DE VERCEL
 const envConfigFile = `export const environment = {
     production: true,
-    emailjs: {
-        serviceId: '${process.env.EMAILJS_SERVICE_ID}',
-        templateId: '${process.env.EMAILJS_TEMPLATE_ID}',
-        publicKey: '${process.env.EMAILJS_PUBLIC_KEY}'
-    }
+    SERVICE_ID: '${process.env.SERVICE_ID}',
+    TEMPLATE_ID: '${process.env.TEMPLATE_ID}',
+    PUBLIC_KEY: '${process.env.PUBLIC_KEY}'
 };
 `;
 
 // Crear carpeta si no existe
 if (!fs.existsSync(dir)) {
-  fs.mkdirSync(dir, { recursive: true });
+    fs.mkdirSync(dir, { recursive: true });
 }
 
 // Escribir los archivos
