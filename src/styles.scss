@@ -13,7 +13,6 @@ $enable-gradients: false;
 /* 
     VARIABLES CSS — TEMA CLARO (DEFAULT) 
 */
-
 :root {
     /* Fondos */
     --bg-par: #ffffff;
@@ -37,7 +36,6 @@ $enable-gradients: false;
 /* 
     ESTILOS GLOBALES 
 */
-
 html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--nav-height);
@@ -103,7 +101,6 @@ body {
 /*
     SECCIONES (BASE)
 */
-
 section {
     min-height: calc(100vh - var(--nav-height));
     display: flex;
@@ -113,11 +110,9 @@ section {
     transition: background-color 0.3s ease;
 }
 
-
 /*
     MODO CLARO — ALTERNANCIA AUTOMÁTICA
 */
-
 body:not(.dark-mode) section:nth-of-type(odd) {
     background-color: var(--bg-impar);
 }
@@ -130,7 +125,6 @@ body:not(.dark-mode) section:nth-of-type(even) {
 /*
     MODO OSCURO — VARIABLES PROFESIONALES
 */
-
 body.dark-mode {
     /* Fondos */
     --bg-par: #0f172a;
@@ -188,8 +182,6 @@ body.dark-mode {
 /*
     MODO OSCURO — ALTERNANCIA DE SECCIONES
 */
-
-
 body.dark-mode section:nth-of-type(odd) {
     background-color: var(--bg-par);
 }
@@ -202,8 +194,6 @@ body.dark-mode section:nth-of-type(even) {
 /*
     COLOR ACENTO (LINKS / ÉNFASIS)
 */
-
-
 a, .texto-acento {
     color: #38bdf8;
     transition: color 0.2s ease;
@@ -217,8 +207,6 @@ a:hover {
 /*
     HOVER TARJETAS — LIMPIO Y PROFESIONAL
 */
-
-
 body.dark-mode .card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
@@ -229,8 +217,6 @@ body.dark-mode .card:hover {
 /*
     TARJETAS AJUSTES ESPECÍFICO
 */
-
-
 .tarjeta-estudio:hover {
     background-color: #f1f5f9 !important;
 }
@@ -240,4 +226,12 @@ body.dark-mode .tarjeta-estudio:hover {
     border-color: rgba(56, 189, 248, 0.4) !important;
 }
 
+/* Ajustes RESPONSIVE */
 
+@media (max-width: 991.98px) {
+    .section {
+        padding: 2rem;
+        min-height: auto;
+    }
+    
+}

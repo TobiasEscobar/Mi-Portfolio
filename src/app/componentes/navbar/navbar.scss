@@ -1,17 +1,110 @@
+/*
+    ESTILOS GENERALES (BASE)
+*/
+.navbar-custom {
+    background-color: var(--navbar-bg);
+    border-bottom: 1px solid var(--card-border);
+    transition: all 0.3s ease;
+    z-index: 1030; /* Por encima de todo */
+    padding: 0.8rem 0;
+}
+
 .nav-link {
+    font-weight: 500;
     cursor: pointer;
+    position: relative;
     transition: color 0.3s ease;
     
-    /* Aseguramos que el hover use tu color acento */
     &:hover {
         color: var(--bs-info) !important;
     }
 }
 
-.navbar {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+/*
+    MODO ESCRITORIO Y NOTEBOOK
+*/
+@media (min-width: 992px) {
+    .navbar-custom {
+        position: sticky; 
+        top: 0;
+        width: 100%;
+    }
+
+    /* Oculto offcanvas ya que no lo quiero en PC */
+    .offcanvas {
+        background-color: transparent;
+        box-shadow: none;
+        height: auto;
+        flex-grow: 1;
+        display: flex;
+        position: static; /* Deja de ser panel lateral */
+        visibility: visible !important;
+        transform: none !important;
+    }
+
+    .offcanvas-header {
+        display: none;
+    }
+
+    .offcanvas-body {
+        display: flex;
+        justify-content: center; /* Centra el bloque de links */
+        padding: 0;
+        overflow: visible;
+    }
+}
+
+/*
+    MODO CELULARES
+*/
+@media (max-width: 991.98px) {
+    .navbar-custom {
+        position: relative; 
+        width: 100%;
+    }
+
+    /* Estilo del menú lateral desplegable */
+    .offcanvas {
+        background-color: var(--navbar-bg);
+        color: var(--text-main);
+    }
     
-    /* CAMBIO: Usar variable para que se vea sutil en ambos modos */
-    border-bottom: 1px solid var(--card-border); 
+    .navbar-toggler{
+        justify-content: end;
+    }
+
+    /* Ajuste para el botón de cerrar */
+    .btn-close-custom {
+        opacity: 1;
+    }
+    
+    /* Asegurar alineamiento del contenedor */
+    .container-fluid {
+        display: flex;
+        justify-content: space-between;
+        justify-content: end;
+    }
+}
+
+/*
+    AJUSTES PARA MODO OSCURO
+*/
+/* Si el body tiene la clase dark-mode */
+:host-context(body.dark-mode) {
+    /* Invertir el color de la X de cerrar para que sea blanca */
+    .btn-close-custom {
+        filter: invert(1) grayscale(100%) brightness(200%);
+    }
+
+    /* Icono hamburguesa blanco */
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+}
+
+/* Icono hamburguesa negro (para modo claro) */
+:host-context(body:not(.dark-mode)) {
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(30, 41, 59, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
 }

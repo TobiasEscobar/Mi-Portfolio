@@ -15,7 +15,7 @@ export class Navbar implements OnInit {
     private desplazadorVista: ViewportScroller,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
-
+  
   ngOnInit(): void {
     // Verificar si hay preferencia guardada (solo en navegador)
     if (isPlatformBrowser(this.platformId)) {
@@ -48,7 +48,6 @@ export class Navbar implements OnInit {
     document.body.classList.remove('dark-mode');
   }
 
-  // Función en español para navegar
   public irASeccion(idSeccion: string): void {
     this.desplazadorVista.scrollToAnchor(idSeccion);
   }

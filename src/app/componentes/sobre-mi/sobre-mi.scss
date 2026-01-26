@@ -4,11 +4,39 @@
 }
 
 .container-botones {
-    text-align: center;
+    display: flex;
+    gap: 4.25rem;
+    justify-content: center;
 }
 
-.btn-outline-primary {
-    width: 20%;
-    margin-top: 30px;
-    margin-right: 20px;
+.img-perfil {
+    max-width: 350px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+
+@media (max-width: 991.98px) {
+    .img-perfil {
+        width: 220px;
+        height: 220px;
+        margin-bottom: 2rem;
+    }
+
+    .parrafo-sobre-mi {
+        text-align: left;
+        padding: 0 10px;
+    }
+
+    .container-botones {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2.15rem;
+    }
+
+    .container-botones .btn {
+        width: 100%;
+        margin: 0;
+    }
 }

@@ -110,8 +110,25 @@
 }
 
 /* Ajuste para celulares */
-@media (max-width: 768px) {
-  .contenedor-galeria {
-    height: 50vh;
+@media (max-width: 991.98px) {
+  // Los botones ocupan todo el ancho 
+  .card-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
   }
+  .btn-outline-primary {
+      width: 100%;
+      margin: 0;
+  }
+
+  /* Habilita overlay-hover para que se vea el icono de github*/
+  .overlay-hover {
+      opacity: 1;
+      background-color: rgba(30, 41, 59, 0.3);
+  }
+  
+  .contenedor-galeria {
+      height: 50vh;
+    }
 }
