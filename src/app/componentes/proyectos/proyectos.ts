@@ -28,7 +28,7 @@ export class Proyectos {
     {
       titulo: 'Red Social InstaDev',
       descripcion: 'Red social full stack con autenticación, gestión de usuarios y publicaciones, desarrollada principalmente con Angular y NestJS.',
-      imagenPortada: 'red-social/inicio.jpeg',
+      imagenPortada: 'red-social/Inicio.jpeg',
       tecnologias: ['Angular', 'TypeScript', 'Nest.js', 'MongoDB', 'HTML/CSS', 'Vercel', 'Tailwind CSS'],
       imagenes: ['red-social/Perfil.jpeg', 'red-social/Dashboard metricas.jpeg', 'red-social/Dashboard panel de usuarios.jpeg', 'red-social/Registro.jpeg', 
         'red-social/Login.jpeg', 'red-social/Modal publicacion.jpeg', 'red-social/Vista publicacion.jpeg'
