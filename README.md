@@ -1,6 +1,7 @@
-# 👨‍💻 Mi Portfolio Web - Tobias Escobar
+# 👨‍💻 Mi Portfolio Web - Tobías Fabricio Escobar
 
-> **[Ver Demo Online](https://tobias-fabricio-escobar-portfolio.vercel.app/)** 
+> **[Ver Demo Online](https://tobias-fabricio-escobar-portfolio.vercel.app/)**
+>  
 Bienvenido al repositorio de mi portfolio personal. Este proyecto es la carta de presentación de mi perfil profesional como Desarrollador Full Stack, diseñado para mostrar mis habilidades técnicas, experiencia y proyectos realizados.
 
 ![Image](https://github.com/user-attachments/assets/624444f3-1e46-4bc1-89c6-3fe5bdf2cb50)
@@ -33,4 +34,5 @@ El proyecto fue construido utilizando una arquitectura robusta y escalable:
 # ¿Te intereso mi perfil?
 
 > ¡Contáctame a través de Linkedin!
+> 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tobias-fabricio-escobar/)
