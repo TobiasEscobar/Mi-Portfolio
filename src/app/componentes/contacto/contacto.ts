@@ -28,18 +28,19 @@ export class Contacto {
     this.contactoForm = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      mensaje: ['', [Validators.required, Validators.minLength(3)]]
+      mensaje: ['', [Validators.required, Validators.minLength(5)]],
+      website: [''] // Campo oculto para bots
     });
   }
 
-  // Función para abrir LinkedIn
+  // Abrir LinkedIn
   abrirLinkedin() {
     // Se construye el link al momento del click
     const url = `https://www.linkedin.com/in/${this._linkedinUser}`;
     window.open(url, '_blank');
   }
 
-  // Función para copiar el Email (sin exponerlo en el HTML)
+  // Copiar el Email al portapapeles
   copiarEmail() {
     const emailCompleto = `${this._mailUser}@${this._mailDomain}`;
     
@@ -57,7 +58,7 @@ export class Contacto {
     });
   }
 
-  // Función para abrir WhatsApp o mostrar número
+  // Abrir WhatsApp
   abrirWhatsapp() {
     const fullNumber = `${this._phonePrefix}${this._phoneNumber}`;
     // Abre la API de WhatsApp
@@ -66,6 +67,13 @@ export class Contacto {
   }
 
   async enviarMensaje() {
+
+    // Verificar campo oculto (honeypot)
+    if (this.contactoForm.value.website) {
+      console.warn('Se detectó un bot. Envío cancelado.');
+      return;
+    }
+
     if (this.contactoForm.invalid) {
       this.contactoForm.markAllAsTouched();
       
@@ -80,31 +88,40 @@ export class Contacto {
       return;
     }
 
-    // 2. Preparar el envío
+    // Preparar para enviar
     this.enviando = true;
     
-    // Aquí pon tus credenciales de EmailJS
-    const YOUR_SERVICE_ID = environment.SERVICE_ID; 
-    const YOUR_TEMPLATE_ID = environment.TEMPLATE_ID;
-    const YOUR_PUBLIC_KEY = environment.PUBLIC_KEY;
+    // Credenciales de EmailJS
+    const MY_SERVICE_ID = environment.SERVICE_ID; 
+    const MY_TEMPLATE_ID = environment.TEMPLATE_ID;
+    const MY_PUBLIC_KEY = environment.PUBLIC_KEY;
+    const MY_TEMPLATE_AUTOREPLY = environment.TEMPLATE_ID_AUTOREPLY;
 
     const templateParams = {
       nombre: this.contactoForm.value.nombre,
       email: this.contactoForm.value.email,
       mensaje: this.contactoForm.value.mensaje,
-      nombre_destinatario: 'Tobías' // Tu nombre para que salga en el correo
+      nombre_destinatario: 'Tobías Fabricio Escobar'
     };
 
     try {
-      // 3. Enviar correo usando EmailJS
+      // Enviarme correo usando el servicio de EmailJS
       await emailjs.send(
-        YOUR_SERVICE_ID, 
-        YOUR_TEMPLATE_ID, 
+        MY_SERVICE_ID, 
+        MY_TEMPLATE_ID, 
         templateParams, 
-        YOUR_PUBLIC_KEY
+        MY_PUBLIC_KEY
       );
 
-      // 4. Alerta de Éxito (SweetAlert2)
+      // Enviar correo de auto-respuesta al usuario
+      await emailjs.send(
+        MY_SERVICE_ID,
+        MY_TEMPLATE_AUTOREPLY,
+        templateParams,
+        MY_PUBLIC_KEY
+      );
+
+      // Modal de exito 
       Swal.fire({
         icon: 'success',
         title: '¡Mensaje Enviado!',
@@ -119,7 +136,7 @@ export class Contacto {
     } catch (error) {
       console.error('Error al enviar:', error);
       
-      // Alerta de Fallo de Red
+      // Modal de Fallo de Red
       Swal.fire({
         icon: 'error',
         title: 'Error de envío',

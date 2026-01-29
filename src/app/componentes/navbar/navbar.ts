@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID, HostListener  } from '@angular/core';
 import { ViewportScroller, isPlatformBrowser} from '@angular/common';
 
 
@@ -10,6 +10,7 @@ import { ViewportScroller, isPlatformBrowser} from '@angular/common';
 export class Navbar implements OnInit {
 
   esModoOscuro: boolean = false;
+  activoCelular: boolean = false;
 
   constructor(
     private desplazadorVista: ViewportScroller,
@@ -24,6 +25,11 @@ export class Navbar implements OnInit {
         this.activarModoOscuro();
       }
     }
+  }
+
+  @HostListener('window:resize')
+  detectarDispositivo(): void {
+    this.activoCelular = window.innerWidth < 992;
   }
 
   cambiarTema(): void {
@@ -49,6 +55,34 @@ export class Navbar implements OnInit {
   }
 
   public irASeccion(idSeccion: string): void {
-    this.desplazadorVista.scrollToAnchor(idSeccion);
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    const elemento = document.getElementById(idSeccion);
+    if (!elemento) return;
+
+    const esCelular = window.innerWidth < 992;
+
+    if (esCelular) {
+      this.activoCelular = true;
+      const offcanvas = document.getElementById('menuLateral');
+
+      if (offcanvas) {
+        offcanvas.addEventListener(
+          'hidden.bs.offcanvas',
+          () => {
+            elemento.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          },
+          { once: true }
+        );
+
+        // cerrar offcanvas manualmente
+        (window as any).bootstrap?.Offcanvas
+          .getInstance(offcanvas)
+          ?.hide();
+      }
+    } else {
+      elemento.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
+
 }

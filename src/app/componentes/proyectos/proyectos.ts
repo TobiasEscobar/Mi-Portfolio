@@ -7,7 +7,7 @@ interface Proyecto {
   descripcion: string;
   imagenPortada: string;
   tecnologias: string[];
-  imagenes: string[];
+  imagenes?: string[];
   repoUrl: string;
   demoUrl?: string;
 }
@@ -27,13 +27,14 @@ export class Proyectos {
   public listaProyectos: Proyecto[] = [
     {
       titulo: 'Red Social InstaDev',
-      descripcion: 'Aplicación social completa con autenticación, perfiles y publicaciones. Backend robusto y frontend reactivo.',
-      imagenPortada: 'red-social/Inicio.jpeg',
+      descripcion: 'Red social full stack con autenticación, gestión de usuarios y publicaciones, desarrollada principalmente con Angular y NestJS.',
+      imagenPortada: 'red-social/inicio.jpeg',
       tecnologias: ['Angular', 'TypeScript', 'Nest.js', 'MongoDB', 'HTML/CSS', 'Vercel', 'Tailwind CSS'],
       imagenes: ['red-social/Perfil.jpeg', 'red-social/Dashboard metricas.jpeg', 'red-social/Dashboard panel de usuarios.jpeg', 'red-social/Registro.jpeg', 
         'red-social/Login.jpeg', 'red-social/Modal publicacion.jpeg', 'red-social/Vista publicacion.jpeg'
       ],
-      repoUrl: 'https://github.com/TobiasEscobar/Red-Social-InstaDev'
+      repoUrl: 'https://github.com/TobiasEscobar/Red-Social-InstaDev',
+      demoUrl: 'https://red-social-insta-dev.vercel.app'
     },
     {
       titulo: 'Plataforma Sala de Juegos',
@@ -43,7 +44,8 @@ export class Proyectos {
       imagenes: ['sala-de-juegos/inicio 3.jpeg', 'sala-de-juegos/iniciar sesion.jpeg', 'sala-de-juegos/registro 2.jpeg', 'sala-de-juegos/juegopropio.jpeg', 
         'sala-de-juegos/preguntados.jpeg', 'sala-de-juegos/ranking.jpeg', 'sala-de-juegos/ranking 1024.jpeg'
       ],
-      repoUrl: 'https://github.com/TobiasEscobar/Sala-de-Juegos'
+      repoUrl: 'https://github.com/TobiasEscobar/Sala-de-Juegos',
+      demoUrl: 'https://sala-de-juegos-pi.vercel.app'
     },
     {
       titulo: 'E-Commerce GameLabStore',
@@ -52,15 +54,14 @@ export class Proyectos {
       tecnologias: ['JavaScript', 'Node.js', 'Express.js', 'EJS', 'MySQL', 'HTML/CSS', 'XAMPP'],
       imagenes: ['e-commerce/catalogo.jpeg', 'e-commerce/catalogo-oscuro.jpeg', 'e-commerce/carrito.jpeg', 'e-commerce/dashboard.jpeg', 
         'e-commerce/crear.jpeg', 'e-commerce/eliminar.jpeg', ],
-      repoUrl: 'https://github.com/TobiasEscobar/Simulacion-De-e-commerce'
+      repoUrl: 'https://github.com/TobiasEscobar/Simulacion-De-e-commerce',
     },
     {
       titulo: 'Portfolio Personal',
       descripcion: 'Sitio web profesional para presentación de proyectos y currículum. Diseño responsivo y moderno.',
-      imagenPortada: 'portfolio/portfolio inicio 2.jpeg',
+      imagenPortada: 'portfolio/inicio.jpeg',
       tecnologias: ['Angular', 'TypeScript', 'Bootstrap 5', 'HTML/CSS', 'SASS', 'Vercel'],
-      imagenes: ['portfolio/portfolio inicio.jpeg', 'portfolio/portfolio inicio 2.jpeg'],
-      repoUrl: 'https://github.com/TobiasEscobar/Mi-Portfolio'
+      repoUrl: 'https://github.com/TobiasEscobar/Mi-Portfolio',
     }
   ];
 

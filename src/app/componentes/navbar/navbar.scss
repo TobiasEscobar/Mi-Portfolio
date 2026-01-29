@@ -59,18 +59,30 @@
 */
 @media (max-width: 991.98px) {
     .navbar-custom {
-        position: relative; 
+        position: sticky; 
+        top: 0;
         width: 100%;
+        
+        padding: 0.5rem 0;
     }
 
     /* Estilo del menú lateral desplegable */
     .offcanvas {
         background-color: var(--navbar-bg);
         color: var(--text-main);
+        width: 75%; 
     }
     
     .navbar-toggler{
         justify-content: end;
+    }
+
+    .navbar-logo-mobile {
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+        user-select: none;
+        font-family: 'JetBrains Mono', monospace;
     }
 
     /* Ajuste para el botón de cerrar */
@@ -81,8 +93,8 @@
     /* Asegurar alineamiento del contenedor */
     .container-fluid {
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        justify-content: end;
     }
 }
 

@@ -30,11 +30,12 @@
   transition: transform 0.5s ease;
 }
 
-.btn-outline-primary {
-  width: 40%;
-  margin-right: 5%;
-  margin-left: 5%;
-  
+.card-footer {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 /* Estilo de las etiquetas/insignias */
@@ -44,7 +45,8 @@
     border: 1px solid rgba(0,0,0,0.1);
     margin: 2px 5px 5px 2px;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    font-family: 'JetBrains Mono', monospace;
     transition: all 0.2s ease;
 
     &:hover {
@@ -65,6 +67,7 @@
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+
 
 /* ESTILOS DEL MODAL DE GALERÍA */
 

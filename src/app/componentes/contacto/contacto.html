@@ -1,74 +1,8 @@
-<!-- <div class="container py-5">
-    
-    <div class="text-center mb-5">
-        <h2 class="display-5 fw-bold text-muted">Contacto</h2>
-        <h6 class="texto-acento text-uppercase fw-bold letter-spacing">¿Tiene alguna duda? ¡Envíe un mensaje!</h6>
-        <div class="raya-decorativa mx-auto mt-3"></div>
-    </div>
-
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
-            
-            <div class="card shadow-sm border-0 tarjeta-contacto">
-                <div class="card-body p-4 p-md-5">
-
-                    <form [formGroup]="contactoForm" (ngSubmit)="enviarMensaje()">
-                        <div class="row g-3">
-                            
-                            <div class="col-md-6">
-                                <label class="form-label fw-bold small text-muted">NOMBRE</label>
-                                <input type="text" 
-                                    class="form-control form-control-lg" 
-                                    placeholder="Su nombre" 
-                                    formControlName="nombre">
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label fw-bold small text-muted">CORREO</label>
-                                <input type="email" 
-                                    class="form-control form-control-lg" 
-                                    placeholder="sucorreo@ejemplo.com" 
-                                    formControlName="email">
-                            </div>
-
-                            <div class="col-12 mt-4">
-                                <label class="form-label fw-bold small text-muted">MENSAJE</label>
-                                <textarea class="form-control form-control-lg" 
-                                        rows="5" 
-                                        placeholder="Escriba su mensaje aquí..." 
-                                        formControlName="mensaje"></textarea>
-                            </div>
-
-                            <div class="col-12 text-center mt-5">
-                                <button type="submit" 
-                                        class="btn btn-outline-primary btn-lg px-5 py-3 w-100 w-md-auto rounded-pill shadow-sm"
-                                        [disabled]="enviando"> @if (!enviando) {
-                                        Enviar Mensaje <i class="bi bi-send-fill ms-2"></i>
-                                    } @else {
-                                        <span>Enviando...</span>
-                                        <div class="spinner-border spinner-border-sm ms-2" role="status">
-                                            <span class="visually-hidden">Loading...</span>
-                                        </div>
-                                    }
-                                </button>
-                            </div>
-
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div> -->
-
-
 <div class="container py-5">
     
     <div class="text-center mb-5">
         <h2 class="display-5 fw-bold text-muted">Contacto</h2>
-        <h6 class="texto-acento text-uppercase fw-bold letter-spacing">¡Conectemos!</h6>
+        <h6 class="texto-acento text-uppercase fw-bold letter-spacing">Disponible para oportunidades y consultas</h6>
         <div class="raya-decorativa mx-auto mt-3"></div>
     </div>
 
@@ -142,7 +76,8 @@
                 <div class="card-body p-4 p-md-5">
                     
                     <p class="text-muted mb-4">
-                        O si prefiere, puede completar el formulario y le responderé a la brevedad.
+                        Si desea contactarme por una propuesta laboral, colaboración o consulta técnica,
+                        puede completar el formulario y le responderé a la brevedad.
                     </p>
 
                     <form [formGroup]="contactoForm" (ngSubmit)="enviarMensaje()">
@@ -150,25 +85,45 @@
                             <div class="col-md-6">
                                 <label class="form-label fw-bold small text-muted">NOMBRE</label>
                                 <input type="text" 
-                                    class="form-control form-control-lg" 
+                                    class="form-control form-control-lg"
+                                    [class.is-invalid]="contactoForm.get('nombre')?.invalid && contactoForm.get('nombre')?.touched"
                                     placeholder="Su nombre" 
                                     formControlName="nombre">
+                                <div class="invalid-feedback">
+                                    Ingresá un nombre válido (mínimo 3 caracteres).
+                                </div>
                             </div>
 
                             <div class="col-md-6">
                                 <label class="form-label fw-bold small text-muted">CORREO</label>
                                 <input type="email" 
-                                    class="form-control form-control-lg" 
-                                    placeholder="sucorreo@ejemplo.com" 
+                                    class="form-control form-control-lg"
+                                    [class.is-invalid]="contactoForm.get('email')?.invalid && contactoForm.get('email')?.touched"
+                                    placeholder="correo@ejemplo.com" 
                                     formControlName="email">
+                                <div class="invalid-feedback">
+                                    Ingresá un correo válido (mínimo 5 caracteres y con @).
+                                </div>
                             </div>
 
                             <div class="col-12 mt-4">
                                 <label class="form-label fw-bold small text-muted">MENSAJE</label>
                                 <textarea class="form-control form-control-lg" 
+                                [class.is-invalid]="contactoForm.get('mensaje')?.invalid && contactoForm.get('mensaje')?.touched"
                                         rows="5" 
                                         placeholder="Escriba su mensaje aquí..." 
                                         formControlName="mensaje"></textarea>
+                                <div class="invalid-feedback">
+                                    Ingresá un mensaje válido (mínimo 5 caracteres).
+                                </div>
+                            </div>
+
+                            <div class="d-none">
+                                <label>Website</label>
+                                <input
+                                    type="text"
+                                    formControlName="website"
+                                    autocomplete="off">
                             </div>
 
                             <div class="col-12 text-center mt-5">

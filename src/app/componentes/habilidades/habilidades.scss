@@ -34,9 +34,10 @@
 .badge-habilidad {
     background-color: var(--bs-light);      /* Fondo gris muy clarito */
     color: var(--bs-dark);                  /* Texto oscuro */
-    border: 1px solid rgba(0,0,0,0.1);      /* Borde sutil */
+    border: 1px solid rgba(0,0,0,0.1);
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-family: 'JetBrains Mono', monospace;
     transition: all 0.2s ease;
 
     &:hover {
