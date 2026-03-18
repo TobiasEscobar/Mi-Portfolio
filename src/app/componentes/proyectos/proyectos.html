@@ -2,7 +2,7 @@
     
     <div class="text-center mb-5">
         <h2 class="display-5 fw-bold text-muted">Mis Proyectos</h2>
-        <h6 class="texto-acento text-uppercase fw-bold letter-spacing">Personales y académicos</h6>
+        <h6 class="texto-acento text-uppercase fw-bold letter-spacing">Personales y Grupales</h6>
         <div class="raya-decorativa mx-auto mt-3"></div>
     </div>
 
@@ -22,11 +22,12 @@
                         <div class="overlay-hover d-flex align-items-center justify-content-center gap-2">
                             @if (proyecto.demoUrl) {
                                 <button class="btn btn-light btn-md rounded-circle" title="Ver Demo" (click)="navegarA(proyecto.demoUrl!)">
-                                <i class="bi bi-eye-fill"></i>
+                                    <i class="bi bi-eye-fill"></i>
                                 </button>
-                            } @else {
+                            }
+                            @if (proyecto.repoUrl) {
                                 <button class="btn btn-light btn-md rounded-circle" title="Ver Código" (click)="navegarA(proyecto.repoUrl)">
-                                <i class="bi bi-github"></i>
+                                    <i class="bi bi-github"></i>
                                 </button>
                             }
                         </div>
@@ -51,9 +52,11 @@
                                 Ver imagenes
                             </button>
                         }
-                        <button class="btn btn-outline-primary w-md-auto rounded-pill shadow-sm" (click)="navegarA(proyecto.repoUrl)">
-                            Ver repositorio
-                        </button>
+                        @if (proyecto.repoUrl) {
+                            <button class="btn btn-outline-primary w-md-auto rounded-pill shadow-sm" (click)="navegarA(proyecto.repoUrl)">
+                                Ver repositorio
+                            </button>
+                        }
                     </div>
 
                 </div>

@@ -8,7 +8,7 @@ interface Proyecto {
   imagenPortada: string;
   tecnologias: string[];
   imagenes?: string[];
-  repoUrl: string;
+  repoUrl?: string;
   demoUrl?: string;
 }
 
@@ -26,9 +26,19 @@ export class Proyectos {
 
   public listaProyectos: Proyecto[] = [
     {
+      titulo: 'Vetween VMS',
+      descripcion: 'Plataforma VMS para clínicas veterinarias desarrollada en equipo (en la capacitacion para juniors IT de Igrowker). Incluye gestión de pacientes, responsables, visitas y resúmenes con IA. A cargo del desarrollo backend, estructurando bases de datos y endpoints. [Actualmente en desarrollo].',
+      imagenPortada: 'vetween/vetween-login.jpeg',
+      tecnologias: ['Node.js', 'Express.js', 'JavaScript', 'PostgreSQL(Supabase)', 'Swagger', 'SCRUM'],
+      imagenes: ['vetween/vetween-login.jpeg', 'vetween/vetween-pacientes.jpeg', 'vetween/vetween-responsables.jpeg', 
+        'vetween/vetween-resumen.jpeg', 'vetween/vetween-cuenta.jpeg', 'vetween/vetween-resumenIA.jpeg', 
+        'vetween/vetween-paciente-perfil.jpeg', 'vetween/vetween-visitas.jpeg'
+      ]
+    },
+    {
       titulo: 'Red Social InstaDev',
       descripcion: 'Red social full stack con autenticación, gestión de usuarios y publicaciones, desarrollada principalmente con Angular y NestJS.',
-      imagenPortada: 'red-social/Inicio.jpeg',
+      imagenPortada: 'red-social/inicio.jpeg',
       tecnologias: ['Angular', 'TypeScript', 'Nest.js', 'MongoDB', 'HTML/CSS', 'Vercel', 'Tailwind CSS'],
       imagenes: ['red-social/Perfil.jpeg', 'red-social/Dashboard metricas.jpeg', 'red-social/Dashboard panel de usuarios.jpeg', 'red-social/Registro.jpeg', 
         'red-social/Login.jpeg', 'red-social/Modal publicacion.jpeg', 'red-social/Vista publicacion.jpeg'
@@ -40,7 +50,7 @@ export class Proyectos {
       titulo: 'Plataforma Sala de Juegos',
       descripcion: 'Plataforma que permite a los usuarios explorar y jugar una variedad de juegos en línea. Incluye autenticación y perfiles de usuario.',
       imagenPortada: 'sala-de-juegos/inicio 3.jpeg',
-      tecnologias: ['Angular', 'TypeScript', 'Supabase', 'Bootstrap 5', 'HTML/CSS', 'Vercel'],
+      tecnologias: ['Angular', 'TypeScript', 'PostgreSQL (Supabase)', 'Bootstrap 5', 'HTML/CSS', 'Vercel'],
       imagenes: ['sala-de-juegos/inicio 3.jpeg', 'sala-de-juegos/iniciar sesion.jpeg', 'sala-de-juegos/registro 2.jpeg', 'sala-de-juegos/juegopropio.jpeg', 
         'sala-de-juegos/preguntados.jpeg', 'sala-de-juegos/ranking.jpeg', 'sala-de-juegos/ranking 1024.jpeg'
       ],

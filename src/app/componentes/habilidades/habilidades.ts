@@ -16,27 +16,33 @@ export class Habilidades {
 
   public listaHabilidades: CategoriaHabilidad[] = [
       {
-        nombre: 'Frontend & Frameworks',
-        icono: 'bi-window-fullscreen',
-        tecnologias: [
-          'Angular 17+', 'TypeScript', 'JavaScript (ES6+)', 
-          'Bootstrap 5', 'HTML5', 'CSS3 / SASS'
-        ]
+        nombre: 'Lenguajes',
+        icono: 'bi-server',
+        tecnologias: ['JavaScript', 'TypeScript', 'Java',
+          'Python']
       },
       {
         nombre: 'Backend & Bases de Datos',
         icono: 'bi-server',
         tecnologias: [
-          'Node.js', 'Nest.js', 'MySQL', 'MongoDB', 
-          'Express', 'Python'
+          'Node.js', 'Express.js', 'Nest.js', 'PostgreSQL (Supabase)',
+          'MySQL', 'MongoDB' 
         ]
       },
       {
         nombre: 'Herramientas & Gestión',
         icono: 'bi-tools',
         tecnologias: [
-          'Git', 'GitHub', 'Vercel', 'Postman', 'Scrum / Agile', 'Trello'
+          'Git / GitHub', 'Vercel/Render', 'Postman', 'Scrum / Agile', 
+          'Jira', 'Swagger'
         ]
-      }
+      },
+      {
+        nombre: 'Frontend & Complementarios',
+        icono: 'bi-window-fullscreen',
+        tecnologias: [
+          'Angular 17+', 'Bootstrap 5', 'HTML5 / CSS3'
+        ]
+      },
     ];
 }

@@ -30,6 +30,11 @@
                         <p class="card-text text-muted">
                             {{ estudio.descripcion }}
                         </p>
+                        @if (estudio.url) {
+                            <button class="btn btn-outline-primary w-md-auto rounded-pill shadow-sm" (click)="navegarA(estudio.url!)">
+                                Ver crendencial
+                            </button>
+                        }
 
                     </div>
                     
