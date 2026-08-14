@@ -18,8 +18,7 @@ export class Habilidades {
       {
         nombre: 'Lenguajes',
         icono: 'bi-server',
-        tecnologias: ['JavaScript', 'TypeScript', 'Java',
-          'Python']
+        tecnologias: ['JavaScript', 'TypeScript', 'Python']
       },
       {
         nombre: 'Backend & Bases de Datos',
