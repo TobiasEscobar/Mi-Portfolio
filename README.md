@@ -3,7 +3,7 @@
 
 > **[Ver Demo Online](https://tobias-fabricio-escobar-portfolio.vercel.app/)**
 >  
-Bienvenido al repositorio de mi portfolio personal. Este proyecto es la carta de presentación de mi perfil profesional como Desarrollador Full Stack, diseñado para mostrar mis habilidades técnicas, experiencia y proyectos realizados.
+Bienvenido al repositorio de mi portfolio personal. Este proyecto es la carta de presentación de mi perfil profesional como Técnico Programador, diseñado para mostrar mis habilidades técnicas, experiencia y proyectos realizados.
 
 <img width="1600" height="802" alt="WhatsApp Image 2026-08-14 at 04 11 13" src="https://github.com/user-attachments/assets/24890013-13b0-47b2-8908-e2043311f6a6" />
 
